@@ -1,0 +1,78 @@
+/* ========== RESET ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* ========== VARIABLES ========== */
+  :root {
+    --color-primario: #235A9C;
+    --color-secundario: #ffffff;
+    --fuente-principal: 'Poppins', sans-serif;
+  }
+  
+  /* ========== BASE ========== */
+  body {
+    font-family: var(--fuente-principal);
+    font-size: 16px;
+    background-color: var(--color-secundario);
+    color: #333;
+    padding: 1rem;
+    line-height: 1.6;
+  }
+  
+  /* Enlaces */
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  ul {
+    list-style: none;
+  }
+
+  nav {
+    background-color: var(--color-primario);
+    padding: 0.5rem 1rem;
+  }
+  
+  .menu-principal {
+    display: flex;
+    flex-direction: column; /* se puede cambiar a row en desktop */
+    gap: 1rem;
+  }
+  
+  .menu-principal li {
+    position: relative;
+  }
+  
+  .menu-principal a {
+    color: white;
+    padding: 0.5rem;
+    display: block;
+  }
+  
+  /* Submenús */
+  .submenu-lista {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    min-width: 180px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    z-index: 10;
+  }
+  
+  .submenu-lista li a {
+    color: #333;
+    padding: 0.5rem 1rem;
+  }
+  
+  /* Mostrar submenu al pasar el mouse */
+  .submenu:hover .submenu-lista {
+    display: block;
+  }
+  
+  
