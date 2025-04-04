@@ -1,18 +1,18 @@
-/* ========== RESET ========== */
+/* FONDO ENTERO */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
   
-  /* ========== VARIABLES ========== */
+  /* VARIABLES */
   :root {
     --color-primario: #235A9C;
     --color-secundario: #ffffff;
     --fuente-principal: 'Poppins', sans-serif;
   }
   
-  /* ========== BASE ========== */
+  /* BASE */
   body {
     font-family: var(--fuente-principal);
     font-size: 16px;
@@ -22,7 +22,36 @@
     line-height: 1.6;
   }
   
-  /* Enlaces */
+  /* SECCIÓN CABECERA */
+.header-section {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 9;
+}
+
+.header-section .contenedor-header {
+    padding: 10px 10vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contenedor-header .cajalogo {
+    left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor-header .logo {
+    height: 60px;
+}
+
+
+  /* NAV BAR */
   a {
     text-decoration: none;
     color: inherit;
