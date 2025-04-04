@@ -6,63 +6,85 @@
     <title>FitMajo | Gymwear | Productos Fitness</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="img/logo/1-favicon-fmajo.png" type="image/x-icon"/>
+    <link
+      rel="shortcut icon"
+      href="img/logo/1-favicon-fmajo.png"
+      type="image/x-icon"
+    />
 
     <!-- Tipografía de Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"/>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- CSS home -->
     <link rel="stylesheet" href="css/home.css" />
 
     <!-- CDN font-awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
   </head>
   <body>
-    <!-- SECCIÓN CABECERA -->
+    <!-- HEADER COMPLETO -->
     <header class="header-section">
-      <!-- LOGOTIPO -->
       <div class="contenedor-header">
         <div class="cajalogo">
           <h1>FitMajo</h1>
-          <a href="index.html">
-            <img src="img/logo/2-logotipo-fitmajo.png" alt="Logo FitMajo" class="logo"/>
+          <a href="00_index.html">
+            <img
+              src="img/logo/2-logotipo-fitmajo.png"
+              alt="Logo FitMajo"
+              class="logo"
+            />
           </a>
         </div>
-        <!-- SEARCH BAR -->
         <div class="search">
-          <input type="text" class="search-box" name="search-box" id="buscador" placeholder="Buscar..."/>
+          <input
+            type="text"
+            class="search-box"
+            name="search-box"
+            id="buscador"
+            placeholder="Buscar..."
+          />
           <button class="search-btn">buscar</button>
         </div>
       </div>
-    </header>
 
-    <!-- NAVBAR -->
-    <nav>
-      <ul class="menu-principal">
-          <li><a href="index.html">inicio</a></li>
-      
+      <!-- NAVBAR DENTRO DEL HEADER -->
+      <nav>
+        <ul class="menu-principal">
+          <li><a href="00_index.html">inicio</a></li>
+
           <li class="submenu">
             <a href="01_mujer.html">mujer</a>
             <ul class="submenu-lista">
               <li><a href="01_1_gymwear-mujer.html">gymwear mujer</a></li>
-              <li><a href="01_2_runningwear-mujer.html">runningwear mujer</a></li>
+              <li>
+                <a href="01_2_runningwear-mujer.html">runningwear mujer</a>
+              </li>
             </ul>
           </li>
-      
+
           <li class="submenu">
             <a href="02_hombre.html">hombre</a>
             <ul class="submenu-lista">
               <li><a href="02_1_gymwear-hombre.html">gymwear hombre</a></li>
-              <li><a href="02_2_runningwear-hombre.html">runningwear hombre</a></li>
+              <li>
+                <a href="02_2_runningwear-hombre.html">runningwear hombre</a>
+              </li>
             </ul>
           </li>
-      
+
           <li><a href="03_accesorios.html">accesorios</a></li>
           <li><a href="04_contacto.html">contacto</a></li>
-      </ul>
-    </nav>
+        </ul>
+      </nav>
+    </header>
 
     <!-- CONTENIDO PRINCIPAL -->
     <main>
@@ -72,10 +94,10 @@
         <form id="formulario" action="#" method="post">
           <label for="nombre">Nombre:</label>
           <input type="text" id="nombre" name="nombre" required />
-      
+
           <label for="email">Correo electrónico:</label>
           <input type="email" id="email" name="email" required />
-      
+
           <label for="tipo">Tipo de consulta:</label>
           <select id="tipo" name="tipo" required>
             <option value="">-- Selecciona una opción --</option>
@@ -83,54 +105,57 @@
             <option value="producto">Sobre un producto</option>
             <option value="otro">Otra consulta</option>
           </select>
-      
+
           <label for="mensaje">Mensaje:</label>
           <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
-      
+
           <button type="submit">Enviar</button>
         </form>
-      
-        <p id="mensaje-confirmacion" style="display: none;">¡Gracias por tu mensaje! Te responderemos pronto.</p>
-      </section>
-      
 
+        <p id="mensaje-confirmacion" style="display: none">
+          ¡Gracias por tu mensaje! Te responderemos pronto.
+        </p>
+      </section>
     </main>
-    
+
     <!-- PIE DE LA PAGINA -->
     <footer>
-        <p>&copy; 2025 FitMajo. Todos los derechos reservados.</p>
-        <div class="redes">
-            <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#" class="social-link"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#" class="social-link"><i class="fa-solid fa-xmark"></i></a>
-            <a href="#" class="social-link"><i class="fa-brands fa-tiktok"></i></a>
-        </div>
+      <p>&copy; 2025 FitMajo. Todos los derechos reservados.</p>
+      <div class="redes">
+        <a href="#" class="social-link"
+          ><i class="fa-brands fa-instagram"></i
+        ></a>
+        <a href="#" class="social-link"
+          ><i class="fa-brands fa-facebook"></i
+        ></a>
+        <a href="#" class="social-link"><i class="fa-solid fa-xmark"></i></a>
+        <a href="#" class="social-link"><i class="fa-brands fa-tiktok"></i></a>
+      </div>
     </footer>
 
     <!-- SCRIPT DEL FORMULARIO -->
     <script>
       const formulario = document.getElementById("formulario");
       const mensaje = document.getElementById("mensaje-confirmacion");
-    
+
       formulario.addEventListener("submit", function (e) {
         e.preventDefault(); // Evita que recargue la página
-    
+
         // Validar campos vacíos
         const nombre = document.getElementById("nombre").value.trim();
         const email = document.getElementById("email").value.trim();
         const tipo = document.getElementById("tipo").value;
         const mensajeTexto = document.getElementById("mensaje").value.trim();
-    
+
         if (!nombre || !email || !tipo || !mensajeTexto) {
           alert("Por favor, completa todos los campos.");
           return;
         }
-    
+
         // Mostrar mensaje de confirmación
         mensaje.style.display = "block";
         formulario.reset(); // Opcional: limpiar campos
       });
     </script>
-    
   </body>
 </html>
