@@ -82,26 +82,44 @@
     display: block;
   }
   
-  /* Submenús */
-  .submenu-lista {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #fff;
-    min-width: 180px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    z-index: 10;
-  }
+/* Submenús */
+.submenu-lista {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  min-width: 180px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  z-index: 10;
+}
   
   .submenu-lista li a {
     color: #333;
     padding: 0.5rem 1rem;
   }
+
+/* Hover */
+.menu-principal a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+/* Mejora visual del submenu */
+.submenu-lista li a:hover {
+  background-color: var(--color-primario);
+  color: #fff;
+}
   
-  /* Mostrar submenu al pasar el mouse */
-  .submenu:hover .submenu-lista {
-    display: block;
+/* Mostrar submenu al pasar el mouse */
+.submenu:hover .submenu-lista {
+  display: block;
+}
+  
+/* Web Responsive */
+@media (min-width: 768px) {
+  .menu-principal {
+    flex-direction: row;
+    justify-content: center;
   }
-  
-  
+}
