@@ -25,7 +25,7 @@
       <!-- LOGOTIPO -->
       <div class="contenedor-header">
         <div class="cajalogo">
-          <a href="00_index.html">
+          <a href="index.html">
             <h1>FitMajo</h1>
             <img src="img/logo/2-logotipo-fitmajo.png" alt="Logo FitMajo" class="logo"/>
           </a>
@@ -37,10 +37,11 @@
         </div>
       </div>
     </header>
+
     <!-- NAVBAR -->
     <nav>
       <ul class="menu-principal">
-          <li><a href="00_index.html">inicio</a></li>
+          <li><a href="index.html">inicio</a></li>
       
           <li class="submenu">
             <a href="01_mujer.html">mujer</a>
@@ -62,6 +63,38 @@
           <li><a href="04_contacto.html">contacto</a></li>
       </ul>
     </nav>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+      <!-- FORMULARIO CONTACTO -->
+      <section class="formulario-contacto">
+        <h2>Contáctanos</h2>
+        <form id="formulario" action="#" method="post">
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" required />
+      
+          <label for="email">Correo electrónico:</label>
+          <input type="email" id="email" name="email" required />
+      
+          <label for="tipo">Tipo de consulta:</label>
+          <select id="tipo" name="tipo" required>
+            <option value="">-- Selecciona una opción --</option>
+            <option value="pedido">Sobre un pedido</option>
+            <option value="producto">Sobre un producto</option>
+            <option value="otro">Otra consulta</option>
+          </select>
+      
+          <label for="mensaje">Mensaje:</label>
+          <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+      
+          <button type="submit">Enviar</button>
+        </form>
+      
+        <p id="mensaje-confirmacion" style="display: none;">¡Gracias por tu mensaje! Te responderemos pronto.</p>
+      </section>
+      
+
+    </main>
     
     <!-- PIE DE LA PAGINA -->
     <footer>
@@ -73,5 +106,31 @@
             <a href="#" class="social-link"><i class="fa-brands fa-tiktok"></i></a>
         </div>
     </footer>
+
+    <!-- SCRIPT DEL FORMULARIO -->
+    <script>
+      const formulario = document.getElementById("formulario");
+      const mensaje = document.getElementById("mensaje-confirmacion");
+    
+      formulario.addEventListener("submit", function (e) {
+        e.preventDefault(); // Evita que recargue la página
+    
+        // Validar campos vacíos
+        const nombre = document.getElementById("nombre").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const tipo = document.getElementById("tipo").value;
+        const mensajeTexto = document.getElementById("mensaje").value.trim();
+    
+        if (!nombre || !email || !tipo || !mensajeTexto) {
+          alert("Por favor, completa todos los campos.");
+          return;
+        }
+    
+        // Mostrar mensaje de confirmación
+        mensaje.style.display = "block";
+        formulario.reset(); // Opcional: limpiar campos
+      });
+    </script>
+    
   </body>
 </html>
