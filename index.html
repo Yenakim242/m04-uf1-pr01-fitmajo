@@ -56,12 +56,15 @@
       </div>
 
       <!-- NAVBAR DENTRO DEL HEADER -->
-      <nav>
-        <ul class="menu-principal">
-          <li><a href="index.html">home</a></li>
+      <nav class="topnav">
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+        <ul class="menu-principal" id="menu-principal">
+          <li><a href="index.html">inicio</a></li>
 
           <li class="submenu">
-            <a href="01_mujer.html">mujer</a>
+            <button class="submenu-toggle">
+              mujer <span class="flecha">▼</span>
+            </button>
             <ul class="submenu-lista">
               <li><a href="01_1_gymwear-mujer.html">gymwear mujer</a></li>
               <li>
@@ -71,7 +74,9 @@
           </li>
 
           <li class="submenu">
-            <a href="02_hombre.html">hombre</a>
+            <button class="submenu-toggle">
+              hombre <span class="flecha">▼</span>
+            </button>
             <ul class="submenu-lista">
               <li><a href="02_1_gymwear-hombre.html">gymwear hombre</a></li>
               <li>
@@ -90,12 +95,14 @@
     <main>
       <!-- SECCIÓN CARRUSEL -->
       <section class="contenedor-carrusel">
-        <h2>lleva tu FitMajo</h2>
-        <p>
-          Descubre nuestra colección de ropa deportiva para entrenar con estilo
-          y comodidad.
-        </p>
-        <img src="img/home/01-carrusel.png" alt="Banner FitMajo" />
+        <div class="descripcion-carrusel">
+          <h2>lleva tu FitMajo</h2>
+          <p>
+            Descubre nuestra colección de ropa deportiva para entrenar con
+            estilo y comodidad.
+          </p>
+          <img src="img/home/01-carrusel.png" alt="Banner FitMajo" />
+        </div>
       </section>
 
       <!-- SECCIÓN COLECCIONES -->
@@ -239,5 +246,25 @@
         <a href="#" class="social-link"><i class="fa-brands fa-tiktok"></i></a>
       </div>
     </footer>
+    <script>
+      // Mostrar / ocultar menú hamburguesa
+      document.getElementById("menu-toggle").addEventListener("click", function () {
+        document.getElementById("menu-principal").classList.toggle("active");
+      });
+    
+      // Submenús desplegables
+      const submenuToggles = document.querySelectorAll(".submenu-toggle");
+    
+      submenuToggles.forEach((toggle) => {
+        toggle.addEventListener("click", function () {
+          const submenu = this.parentElement;
+          submenu.classList.toggle("open");
+    
+          const flecha = this.querySelector(".flecha");
+          flecha.textContent = submenu.classList.contains("open") ? "▲" : "▼";
+        });
+      });
+    </script>
+    
   </body>
 </html>
