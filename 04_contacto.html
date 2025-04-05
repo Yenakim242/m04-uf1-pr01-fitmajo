@@ -56,12 +56,15 @@
       </div>
 
       <!-- NAVBAR DENTRO DEL HEADER -->
-      <nav>
-        <ul class="menu-principal">
+      <nav class="topnav">
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+        <ul class="menu-principal" id="menu-principal">
           <li><a href="index.html">home</a></li>
 
           <li class="submenu">
-            <a href="01_mujer.html">mujer</a>
+              <a href="#" class="submenu-toggle">
+                mujer <span class="flecha">▼</span>
+              </a>
             <ul class="submenu-lista">
               <li><a href="01_1_gymwear-mujer.html">gymwear mujer</a></li>
               <li>
@@ -71,7 +74,9 @@
           </li>
 
           <li class="submenu">
-            <a href="02_hombre.html">hombre</a>
+            <a href="#" class="submenu-toggle">
+              hombre <span class="flecha">▼</span>
+            </a>
             <ul class="submenu-lista">
               <li><a href="02_1_gymwear-hombre.html">gymwear hombre</a></li>
               <li>
@@ -135,26 +140,31 @@
 
     <!-- SCRIPT DEL FORMULARIO -->
     <script>
-      const formulario = document.getElementById("formulario");
-      const mensaje = document.getElementById("mensaje-confirmacion");
+      // Mostrar / ocultar menú hamburguesa
+      document
+        .getElementById("menu-toggle")
+        .addEventListener("click", function () {
+          document.getElementById("menu-principal").classList.toggle("active");
+        });
 
-      formulario.addEventListener("submit", function (e) {
-        e.preventDefault(); // Evita que recargue la página
+      function esMobile() {
+        return window.innerWidth < 768;
+      }
 
-        // Validar campos vacíos
-        const nombre = document.getElementById("nombre").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const tipo = document.getElementById("tipo").value;
-        const mensajeTexto = document.getElementById("mensaje").value.trim();
+      // Submenús desplegables solo para mobile
+      const submenuToggles = document.querySelectorAll(".submenu-toggle");
 
-        if (!nombre || !email || !tipo || !mensajeTexto) {
-          alert("Por favor, completa todos los campos.");
-          return;
-        }
+      submenuToggles.forEach((toggle) => {
+        toggle.addEventListener("click", function (e) {
+          if (esMobile()) {
+            e.preventDefault();
+            const submenu = this.closest(".submenu");
+            submenu.classList.toggle("open");
 
-        // Mostrar mensaje de confirmación
-        mensaje.style.display = "block";
-        formulario.reset(); // Opcional: limpiar campos
+            const flecha = this.querySelector(".flecha");
+            flecha.textContent = submenu.classList.contains("open") ? "▲" : "▼";
+          }
+        });
       });
     </script>
   </body>

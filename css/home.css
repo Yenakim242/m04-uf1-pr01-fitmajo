@@ -44,6 +44,10 @@ body {
   align-items: center;
 }
 
+.contenedor-header h1 {
+  display: none;
+}
+
 .cajalogo {
   display: flex;
   align-items: center;
@@ -59,7 +63,7 @@ body {
 
 .search {
   width: 500px;
-  display: flex;
+  display: none;
 }
 
 .search-box {
@@ -103,11 +107,43 @@ nav {
   background-color: var(--color-primario);
 }
 
+ul, ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+nav a {
+  color: #fff;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  color: #ffcc00;
+}
+
 /* HAMBURGUESA MENU */
 
 /* .topnav .icon {
   display: none;
 } */
+
+.submenu-lista {
+  display: none;
+}
+
+.submenu.open .submenu-lista {
+  display: block;
+}
+
+.submenu-toggle {
+  text-transform: capitalize;
+}
 
 .menu-toggle {
   font-size: 1.8rem;
@@ -274,12 +310,12 @@ footer .social-link {
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: white;
+    background-color: #fff;
     min-width: 180px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     z-index: 10;
   }
-
+  
   .submenu:hover .submenu-lista {
     display: block;
   }
@@ -319,6 +355,14 @@ footer .social-link {
     font-size: 18px;
     max-width: 1200px;
     margin: 0 auto;
+  }
+
+  .contenedor-header h1 {
+    display: flex;
+  }
+
+  .search {
+    display: flex;
   }
 
   .caja-coleccion-01,

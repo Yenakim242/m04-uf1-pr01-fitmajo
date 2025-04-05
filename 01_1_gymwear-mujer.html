@@ -56,12 +56,15 @@
       </div>
 
       <!-- NAVBAR DENTRO DEL HEADER -->
-      <nav>
-        <ul class="menu-principal">
+      <nav class="topnav">
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+        <ul class="menu-principal" id="menu-principal">
           <li><a href="index.html">home</a></li>
 
           <li class="submenu">
-            <a href="01_mujer.html">mujer</a>
+            <a href="#" class="submenu-toggle">
+              mujer <span class="flecha">▼</span>
+            </a>
             <ul class="submenu-lista">
               <li><a href="01_1_gymwear-mujer.html">gymwear mujer</a></li>
               <li>
@@ -71,7 +74,9 @@
           </li>
 
           <li class="submenu">
-            <a href="02_hombre.html">hombre</a>
+            <a href="#" class="submenu-toggle">
+              hombre <span class="flecha">▼</span>
+            </a>
             <ul class="submenu-lista">
               <li><a href="02_1_gymwear-hombre.html">gymwear hombre</a></li>
               <li>
@@ -87,18 +92,33 @@
     </header>
 
     <!-- PIE DE LA PAGINA -->
-    <footer>
-      <p>&copy; 2025 FitMajo. Todos los derechos reservados.</p>
-      <div class="redes">
-        <a href="#" class="social-link"
-          ><i class="fa-brands fa-instagram"></i
-        ></a>
-        <a href="#" class="social-link"
-          ><i class="fa-brands fa-facebook"></i
-        ></a>
-        <a href="#" class="social-link"><i class="fa-solid fa-xmark"></i></a>
-        <a href="#" class="social-link"><i class="fa-brands fa-tiktok"></i></a>
-      </div>
-    </footer>
+    <script>
+      // Mostrar / ocultar menú hamburguesa
+      document
+        .getElementById("menu-toggle")
+        .addEventListener("click", function () {
+          document.getElementById("menu-principal").classList.toggle("active");
+        });
+
+      function esMobile() {
+        return window.innerWidth < 768;
+      }
+
+      // Submenús desplegables solo para mobile
+      const submenuToggles = document.querySelectorAll(".submenu-toggle");
+
+      submenuToggles.forEach((toggle) => {
+        toggle.addEventListener("click", function (e) {
+          if (esMobile()) {
+            e.preventDefault();
+            const submenu = this.closest(".submenu");
+            submenu.classList.toggle("open");
+
+            const flecha = this.querySelector(".flecha");
+            flecha.textContent = submenu.classList.contains("open") ? "▲" : "▼";
+          }
+        });
+      });
+    </script>
   </body>
 </html>
