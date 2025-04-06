@@ -329,6 +329,109 @@ main {
   width: 100%;
 }
 
+/* SELECCIÓN PRODUCTIOS DESTACADOS */
+.contenedor-tarjetas {
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 2rem;
+  position: relative;
+  background-color: #fff;
+}
+
+.contenedor-tarjetas .contenedor-productos {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-left: auto;
+  margin-top: auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.img-producto img {
+  width: 100%;
+  object-position: center;
+  height: 100%;
+}
+
+[class^="tarjeta-producto"] {
+  flex-direction: column;
+  display: flex;
+  margin: 5px;
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: box-shadow 0.3s;
+}
+
+[class^="tarjeta-producto"]:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  border: 1px solid var(--color-primario);
+  transition: all 0.3s ease-in-out;  
+}
+
+.img-producto {
+  position: relative;
+}
+
+.img-producto span {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: transparent;
+  color: #c94c4c;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+.info-producto {
+  text-align: center;
+  padding: 0.8rem;
+}
+
+.info-producto h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.3rem;
+}
+
+.info-producto p {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.precio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.precio-oferta {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #000;
+}
+
+.precio-actual {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #aaa;
+  text-decoration: line-through;
+  margin-left: 0.5rem;
+}
+
+
 
 /* ========== FOOTER ========== */
 footer {
@@ -336,6 +439,7 @@ footer {
   text-align: center;
   padding: 1rem;
   margin-top: 3rem;
+  width: 100%;
 }
 
 footer .redes {
@@ -405,10 +509,6 @@ footer .social-link {
     padding: 0.5rem 1rem;
   }
 
-  main {
-    padding: 2rem 5vw;
-  }
-
   .contenedor-colecciones {
     flex-direction: row;
     flex-wrap: wrap;
@@ -425,6 +525,12 @@ footer .social-link {
   .caja-coleccion {
     margin: 0;
   }
+
+  .contenedor-tarjetas .contenedor-productos {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  } 
 
   .caja-coleccion-01,
   .caja-coleccion-02,
@@ -444,7 +550,7 @@ footer .social-link {
 @media (min-width: 1024px) {
   body {
     font-size: 18px;
-    max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
   }
 
@@ -461,7 +567,8 @@ footer .social-link {
     flex: 1 1 calc(33.333% - 1rem);
   }
 
-  .contenedor-productos {
-    grid-template-columns: repeat(4, 1fr);
+  .contenedor-tarjetas .contenedor-productos {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
