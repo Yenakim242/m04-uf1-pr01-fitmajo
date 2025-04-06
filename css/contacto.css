@@ -12,41 +12,55 @@
     margin-bottom: 1.5rem;
     color: var(--color-primario);
   }
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: 2px dashed var(--color-primario);
+  outline-offset: 2px;
+}
+
+input:invalid,
+textarea:invalid,
+select:invalid {
+  border-color: #e74c3c;
+}
+
+.input-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
   
-  .input-row {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1rem;
-  }
+.input-row label {
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+  color: #333;
+}
   
-  .input-row label {
-    margin-bottom: 0.3rem;
-    font-weight: 500;
-    color: #333;
-  }
+.input-row input,
+.input-row select,
+.input-row textarea {
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-family: var(--fuente-principal);
+}
   
-  .input-row input,
-  .input-row select,
-  .input-row textarea {
-    padding: 0.7rem;
-    border: 1px solid #ccc;
-    border-radius: 0.5rem;
-    font-size: 1rem;
-    font-family: var(--fuente-principal);
-  }
+.btn-enviar {
+  background-color: var(--color-primario);
+  color: #fff;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
   
-  .btn-enviar {
-    background-color: var(--color-primario);
-    color: #fff;
-    padding: 0.8rem;
-    border: none;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background 0.3s;
-  }
-  
-  .btn-enviar:hover {
-    background-color: #1d4f87;
-  }
+.btn-enviar:hover {
+  background-color: #1d4f87;
+}
   
