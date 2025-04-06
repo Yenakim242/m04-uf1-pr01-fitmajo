@@ -273,6 +273,10 @@ nav a:hover {
   background-color: #fff;
 }
 
+.contenedor-colecciones h2 {
+  display: none;
+}
+
 .contenedor-colecciones .caja-totcolecciones {
   max-width: 100%;
   grid-template-columns: repeat(2, minmax(0, 1fr));
