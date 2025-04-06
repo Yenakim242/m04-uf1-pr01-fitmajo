@@ -22,6 +22,7 @@
 
     <!-- CSS home -->
     <link rel="stylesheet" href="css/home.css" />
+    <link rel="stylesheet" href="css/contacto.css">
 
     <!-- CDN font-awesome -->
     <link
@@ -62,9 +63,9 @@
           <li><a href="index.html">home</a></li>
 
           <li class="submenu">
-              <a href="#" class="submenu-toggle">
-                mujer <span class="flecha">▼</span>
-              </a>
+            <a href="#" class="submenu-toggle">
+              mujer <span class="flecha">▼</span>
+            </a>
             <ul class="submenu-lista">
               <li><a href="01_1_gymwear-mujer.html">gymwear mujer</a></li>
               <li>
@@ -94,32 +95,36 @@
     <!-- CONTENIDO PRINCIPAL -->
     <main>
       <!-- FORMULARIO CONTACTO -->
-      <section class="formulario-contacto">
+      <section class="contacto-formulario">
         <h2>Contáctanos</h2>
-        <form id="formulario" action="#" method="post">
-          <label for="nombre">Nombre:</label>
-          <input type="text" id="nombre" name="nombre" required />
+        <form>
+          <div class="input-row">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required />
 
-          <label for="email">Correo electrónico:</label>
-          <input type="email" id="email" name="email" required />
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" required />
+          </div>
 
-          <label for="tipo">Tipo de consulta:</label>
-          <select id="tipo" name="tipo" required>
-            <option value="">-- Selecciona una opción --</option>
-            <option value="pedido">Sobre un pedido</option>
-            <option value="producto">Sobre un producto</option>
-            <option value="otro">Otra consulta</option>
-          </select>
+          <div class="input-row">
+            <label for="tipo">Tipo de consulta:</label>
+            <select id="tipo" name="tipo">
+              <option>-- Selecciona una opción --</option>
+              <option>General</option>
+              <option>Problema con pedido</option>
+              <option>Sugerencia</option>
+            </select>
+          </div>
 
-          <label for="mensaje">Mensaje:</label>
-          <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+          <div class="input-row">
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" rows="5"></textarea>
+          </div>
 
-          <button type="submit">Enviar</button>
+          <div class="input-row">
+            <button type="submit" class="btn-enviar">Enviar</button>
+          </div>
         </form>
-
-        <p id="mensaje-confirmacion" style="display: none">
-          ¡Gracias por tu mensaje! Te responderemos pronto.
-        </p>
       </section>
     </main>
 
