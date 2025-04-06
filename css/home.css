@@ -230,17 +230,13 @@ nav a:hover {
 .menu-principal a:hover,
 .submenu-lista li a:hover {
   background-color: rgba(255, 255, 255, 0.1);
-  color: #fff;
+  color: #ffcc00;
 }
 
 
 /* ========== MAIN Y SECCIONES ========== */
-main {
-  /* padding: 1rem; */
-}
 
 /* CARRUSSEL */
-
 .contenedor-carrusel .banner-descripcin {
   width: 100%;
   height: auto;
@@ -302,7 +298,6 @@ main {
   overflow: hidden;
   background-color: #fff;
   transition: border 0.3s, box-shadow 0.3s;
-  
 }
 
 .caja-coleccion:hover {
@@ -336,6 +331,10 @@ main {
   padding-bottom: 2rem;
   position: relative;
   background-color: #fff;
+}
+
+.contenedor-tarjetas h2 {
+  text-transform: capitalize;
 }
 
 .contenedor-tarjetas .contenedor-productos {
